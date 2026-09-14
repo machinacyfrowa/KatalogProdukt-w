@@ -18,4 +18,5 @@ for (int i = 0; i < nazwy.Length; i++)
 
 // Uwaga: przy pustym liczniku byłoby dzielenie przez zero
 double srednia = suma / licznik;
+Console.WriteLine($"Ilość produktów w bazie: {nazwy.Length}");
 Console.WriteLine($"Średnia cena: {srednia:F2} zł z {licznik} produktów");
