@@ -24,9 +24,9 @@ Produkt ram = new Produkt
 Produkt ssd = new Produkt
 {
     Nazwa = "Dysk SSD",
-    Cena = 379.00,
+    Cena = -379.00,
     Kategoria = "Podzespoły",
-    Ilosc = 15
+    Ilosc = -15
 };
 Produkt zasilacz = new Produkt
 {
