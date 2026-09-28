@@ -51,5 +51,15 @@ namespace KatalogProduktów
         {
             get { return _cena * Ilosc; }
         }
+
+        //konstruktor - ten wymaga podania wszytkich parametrów przy tworzeniu obiektu
+        public Produkt(string nazwa, double cena, string kategoria, int ilosc)
+        {
+            //nadajemy wartości pól obiektu na podstawie parametrów konstruktora
+            Nazwa = nazwa;
+            Cena = cena;
+            Kategoria = kategoria;
+            Ilosc = ilosc;
+        }
     }
 }
