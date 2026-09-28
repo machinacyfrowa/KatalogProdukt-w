@@ -12,7 +12,7 @@ namespace KatalogProduktów
             get {  return _nazwa; }
             set
             {
-                if(value == String.Empty)
+                if(value == String.Empty || value == null)
                 {
                     _nazwa = "Brak nazwy";
                     throw new ArgumentException("Nazwa nie może być pusta.");

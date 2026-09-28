@@ -8,7 +8,8 @@ double[] ceny = { 899.00, 249.50, 379.00, 189.99 };
 //stwórz nowy obiekt procesor według definicji klasy Produkt
 Produkt procesor = new Produkt("AMD Ryzen",899.00,"Podzespoły",10);
 Produkt ram = new Produkt("Pamięć RAM", 249.50, "Podzespoły", 20);
-Produkt ssd = new Produkt("Dysk SSD", -379.00, "Podzespoły", -15); //celowo źle do testów
+//Produkt ssd = new Produkt("Dysk SSD", -379.00, "Podzespoły", -15); //celowo źle do testów
+Produkt ssd = new Produkt("Dysk SSD", 379.00, "Podzespoły", 15);
 Produkt zasilacz = new Produkt("Zasilacz", 189.99, "Podzespoły", 5);
 
 
@@ -17,8 +18,8 @@ Produkt[] produkty = { procesor, ram, ssd, zasilacz };
 
 foreach (Produkt produkt in produkty)
 {
-    Console.WriteLine($"Nazwa: {produkt.Nazwa,-25}| Cena: {produkt.Cena,10:f2} zł | " +
-        $"Kategoria: {produkt.Kategoria} | Ilość: {produkt.Ilosc,5}");
+    Console.WriteLine($"Nazwa: {produkt.Nazwa,-15}| Cena: {produkt.Cena,10:f2} zł | " +
+        $"Kategoria: {produkt.Kategoria} | Ilość: {produkt.Ilosc,5} | Wartość magazynu: {produkt.WartoscMagazynu,10:f2} zł");
 }
 
 
