@@ -18,8 +18,7 @@ Produkt[] produkty = { procesor, ram, ssd, zasilacz };
 
 foreach (Produkt produkt in produkty)
 {
-    Console.WriteLine($"Nazwa: {produkt.Nazwa,-15}| Cena: {produkt.Cena,10:f2} zł | " +
-        $"Kategoria: {produkt.Kategoria} | Ilość: {produkt.Ilosc,5} | Wartość magazynu: {produkt.WartoscMagazynu,10:f2} zł");
+    produkt.WypiszProdukt();
 }
 
 
@@ -40,3 +39,8 @@ for (int i = 0; i < nazwy.Length; i++)
 double srednia = suma / licznik;
 //Console.WriteLine($"Ilość produktów w bazie: {nazwy.Length}");
 //Console.WriteLine($"Średnia cena: {srednia:F2} zł z {licznik} produktów");
+
+//wywołanie metody statycznej klasy Produkt, która liczy sumę wartości magazynu dla wszystkich produktów w tablicy
+//wywołujemy poprzez nazwę klasy -> kropka -> nazwa metody statycznej -> w nawiasach podajemy tablicę produktów
+double wartoscMagazynu = Produkt.ObliczWartoscMagazynu(produkty);
+Console.WriteLine($"Suma wartości magazynu dla wszystkich produktów: {wartoscMagazynu:f2} zł");
