@@ -79,7 +79,8 @@ namespace KatalogProduktów
                 $"Kategoria: {Kategoria} | Ilość: {Ilosc,5} | Wartość magazynu: {WartoscMagazynu,10:f2} zł");
         }
         //ta metoda zwraca string z tymi samymi informacjami o produkcie, ale nie wypisuje ich na ekran
-        public string InformacjeOProdukcie()
+        //używamy przeciążenia żeby zmienić domyślne zachowanie metody ToString() która jest dziedziczona po klasie Object
+        public override string ToString()
         {
             return $"Nazwa: {Nazwa,-15}| Cena: {Cena,10:f2} zł | " +
                 $"Kategoria: {Kategoria} | Ilość: {Ilosc,5} | Wartość magazynu: {WartoscMagazynu,10:f2} zł";
