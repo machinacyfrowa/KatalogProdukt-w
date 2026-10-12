@@ -15,8 +15,20 @@ Produkt zasilacz = new Produkt("Zasilacz", 189.99, "Podzespoły", 5);
 
 //tworzymy tablicę produktów
 Produkt[] produkty = { procesor, ram, ssd, zasilacz };
+//pusta tablica na 10 produktów
+Produkt[] produkty2 = new Produkt[10];
+//jeśli chcemy listę to:
+//najpierw słowo List potem w nawiasach ostrych typ danych jaki chcemy przechowywać
+// potem nazwa zmiennej i przypisujemy konstruktorem nową pustą listę
+List<Produkt> listaProduktow = new List<Produkt>();
+//mając listę dodajemy do niej produkty metodą Add
+listaProduktow.Add(procesor);
+listaProduktow.Add(ram);
+listaProduktow.Add(ssd);
+listaProduktow.Add(zasilacz);
 
-foreach (Produkt produkt in produkty)
+//tu możemy wymienić sobię tablicę na listę i odwrotnie i dalej będzie działać
+foreach (Produkt produkt in listaProduktow)
 {
     produkt.WypiszProdukt();
 }
