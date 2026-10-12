@@ -121,5 +121,16 @@ namespace KatalogProduktów
                 Console.WriteLine($"Nie można sprzedać produktu: {Nazwa}. Brak na stanie.");
             }
         }
+        public static Produkt ZnajdzPoNazwie(Produkt[] produkty, string nazwa)
+        {
+            foreach (var produkt in produkty)
+            {
+                if(produkt.Nazwa == nazwa)
+                {
+                    return produkt; //znaleźliśmy produkt o podanej nazwie, zwracamy go
+                }
+            }
+            return null; //jeśli nie znaleźliśmy produktu o podanej nazwie, zwracamy null
+        }
     }
 }
