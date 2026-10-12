@@ -36,7 +36,7 @@ foreach (Produkt produkt in listaProduktow)
 
 double suma = 0;
 int licznik = 0;
-
+//dla tablicy przechodziliśmy "ręcznie" po indeksach i sprawdzaliśmy cenę
 for (int i = 0; i < nazwy.Length; i++)
 {
     // Do sumy trafiają tylko produkty droższe niż 200 zł
@@ -46,17 +46,28 @@ for (int i = 0; i < nazwy.Length; i++)
         licznik++;
     }
 }
+//dla listy możemy użyć LINQ do zsumowania całości
+double sumaListy = listaProduktow.Sum(p => p.Cena); //czytamy jako dla każdego produktu sumuj jego pole Cena
+//albo możemy odfiltrować LINQ produkty droższe niż 200 zł i zsumować tylko te droższe
+List<Produkt> drogieProdukty = listaProduktow.Where(p => p.Cena > 200).ToList(); //zwraca listę produktów droższych niż 200 zł
+//możemy połaczyć obie metody (tzw. chainowanie metod) i od razu zsumować ceny produktów droższych niż 200 zł
+double sumaDrogichProduktow = listaProduktow.Where(p => p.Cena > 200).Sum(p => p.Cena); 
+
 
 // Uwaga: przy pustym liczniku byłoby dzielenie przez zero
 double srednia = suma / licznik;
 //Console.WriteLine($"Ilość produktów w bazie: {nazwy.Length}");
 //Console.WriteLine($"Średnia cena: {srednia:F2} zł z {licznik} produktów");
 
+//srednia dla listy
+double sredniaListy = listaProduktow.Average(p => p.Cena); //zwraca średnią cenę wszystkich produktów w liście
+
 //wywołanie metody statycznej klasy Produkt, która liczy sumę wartości magazynu dla wszystkich produktów w tablicy
 //wywołujemy poprzez nazwę klasy -> kropka -> nazwa metody statycznej -> w nawiasach podajemy tablicę produktów
 double wartoscMagazynu = Produkt.ObliczWartoscMagazynu(produkty);
 Console.WriteLine($"Suma wartości magazynu dla wszystkich produktów: {wartoscMagazynu:f2} zł");
 
+double wartoscListy = Produkt.ObliczWartoscMagazynu(listaProduktow); 
 
 Console.WriteLine(procesor.ToString());
 

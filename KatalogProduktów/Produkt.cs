@@ -95,6 +95,11 @@ namespace KatalogProduktów
             }
             return suma; //na koniec zwracamy sumę wartości magazynu
         }
+        //wariant funkcji liczącej sumę wartości magazynu dla listy produktów
+        public static double ObliczWartoscMagazynu(List<Produkt> produkty)
+        {
+            return produkty.Sum(p => p.WartoscMagazynu); //na koniec zwracamy sumę wartości magazynu
+        }
         //zwraca prawda jeśli ilość jest większa niż minimalny stan, czyli można zamówić produkt
         public bool CzyMoznaZamowic()
         {
