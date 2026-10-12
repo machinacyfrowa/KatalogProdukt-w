@@ -9,10 +9,10 @@ namespace KatalogProduktów
         private string _nazwa;
         public string Nazwa
         {
-            get {  return _nazwa; }
+            get { return _nazwa; }
             set
             {
-                if(value == String.Empty || value == null)
+                if (value == String.Empty || value == null)
                 {
                     _nazwa = "Brak nazwy";
                     throw new ArgumentException("Nazwa nie może być pusta.");
@@ -125,12 +125,17 @@ namespace KatalogProduktów
         {
             foreach (var produkt in produkty)
             {
-                if(produkt.Nazwa == nazwa)
+                if (produkt.Nazwa == nazwa)
                 {
                     return produkt; //znaleźliśmy produkt o podanej nazwie, zwracamy go
                 }
             }
             return null; //jeśli nie znaleźliśmy produktu o podanej nazwie, zwracamy null
         }
+        public static Produkt ZnajdzPoNazwie(List<Produkt> produkty, string nazwa)
+        {
+            //zwróć pierwszy który znajdziesz z podobną nazwą (niezależnie od wielkości liter) lub null jeśli nie znajdziesz
+            return produkty.FirstOrDefault(p => p.Nazwa.Contains(nazwa, StringComparison.OrdinalIgnoreCase)); //zwraca pierwszy produkt o podanej nazwie lub null jeśli nie znaleziono
+        } 
     }
 }

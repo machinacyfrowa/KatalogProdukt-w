@@ -73,3 +73,6 @@ Console.WriteLine(procesor.ToString());
 
 Produkt p = Produkt.ZnajdzPoNazwie(produkty, "Dysk SSD");
 Console.WriteLine($"Znaleziono produkt: {p.Nazwa}, cena: {p.Cena} zł, ilość: {p.Ilosc}");
+
+Produkt p2 = Produkt.ZnajdzPoNazwie(listaProduktow, "sila");
+Console.WriteLine($"Znaleziono produkt: {p2.Nazwa}, cena: {p2.Cena} zł, ilość: {p2.Ilosc}");
